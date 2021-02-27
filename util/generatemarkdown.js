@@ -1,7 +1,8 @@
 
 const inquirer = require('inquirer');
-const path = require('path')
+const path = require('path');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -102,23 +103,23 @@ const questions = [
         },
     ];   
 
-
+//Function to write the readme
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 };
 
-function init() {
-    inquirer.prompt(questions).then(response) => {
-     //const inquirerResponse = "hi";
-      console.log(response
-        );
-      //renderLicenseBadge(response.license);
-//        renderLicenseSection("generating your readME");
-       // writeToFile('README.md', gernerateMarkdown({...inquirerResponses}))
-        writeToFile('README.md', "Hello");
-    })
-};
+
+//function to initialize the application
+function generateMarkdown() {
+    inquirer.prompt(questions).then((inquirerResponses) => {
+      console.log("generating your readME");
+    renderLicenseBadge(response, license);
+    renderLicenseLink(response, license);
+    renderLicenseSection(response, license);
+    writeToFile('README.md', gernerateMarkdown({...inquirerResponses}))
+});
 
 
 init();
-//module.exports = generateMarkdown;
+
+// module.exports = generateMarkdown;
