@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+
 
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -15,7 +15,7 @@ function renderLicenseBadge(license) {
         renderLicenseBadge('https://img.shields.io/badge/License-MIT-yellow.svg');
       } else if (license == "ISC") {
         renderLicenseBadge('https://img.shields.io/badge/License-ISC-blue.svg');
-      } else return "";
+      } else return ("");
     };
 
 // Create a function that returns the license link
@@ -29,7 +29,7 @@ function renderLicenseLink(license) {
         renderLicenseLink('https://opensource.org/licenses/MIT');
       } else if (choices == "ISC") {
         renderLicenseLink('https://opensource.org/licenses/ISC');
-      } else return "";
+      } else return ("");
     };
 
 
@@ -44,7 +44,7 @@ function renderLicenseSection(license) {
         renderLicenseSection('MIT');
       } else if (choices == "ISC") {
         renderLicenseSection('ISC');
-      } else return "";
+      } else return ("");
 };
 
 
@@ -116,10 +116,10 @@ function generateMarkdown() {
     renderLicenseBadge(response, license);
     renderLicenseLink(response, license);
     renderLicenseSection(response, license);
-    writeToFile('README.md', gernerateMarkdown({...inquirerResponses}))
+    writeToFile('README.md', gernerateMarkdown({...inquirerResponses}));
+  }) .catch(function (err){
+  console.log(err);
+
 });
 
-
-init();
-
-// module.exports = generateMarkdown;
+generateMarkdown();
