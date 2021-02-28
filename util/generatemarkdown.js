@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
-// const gernerateMarkdown = require('./util/generateMarkdown');
 
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -108,32 +107,6 @@ function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 };
 
-
-// //function to initialize the application
-// function generateMarkdown() {
-//     inquirer.prompt(questions).then((inquirerResponses) => {
-//       console.log("generating your readME");
-//     writeToFile('README.md', generateMarkdown({...inquirerResponses}))
-//   }) .catch(function (err){
-//   console.log(err);
-
-// });
-// }
-
-// generateMarkdown();
-
-
-// function generateMarkdown() {
-//   inquirer.prompt(questions).then((inquirerResponses) => {
-//     console.log("generating your readME");
-//   writeToFile('README.md', `YOUR RESPONSES ARE: ${inquirerResponses}`)
-// }) .catch(function (err){
-// console.log(err);
-
-// });
-// }
-
-// generateMarkdown();
 
 function generateMarkdown() {
   inquirer.prompt(questions).then((inquirerResponses) => {
