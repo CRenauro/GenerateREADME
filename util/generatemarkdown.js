@@ -7,13 +7,13 @@ const fs = require('fs');
 // If there is no license, return an empty string
 function renderLicenseBadge(choices) {
     if (choices == "Apache") {
-        renderLicenseBadge('https://img.shields.io/badge/License-Apache%202.0-blue.svg');
+        return ('https://img.shields.io/badge/License-Apache%202.0-blue.svg');
       } else if (choices == "GNU") {
-        renderLicenseBadge('https://img.shields.io/badge/License-GPLv3-blue.svg');
+        return('https://img.shields.io/badge/License-GPLv3-blue.svg');
       } else if (choices == "MIT") {
-        renderLicenseBadge('https://img.shields.io/badge/License-MIT-yellow.svg');
+        return('https://img.shields.io/badge/License-MIT-yellow.svg');
       } else if (choices == "ISC") {
-        renderLicenseBadge('https://img.shields.io/badge/License-ISC-blue.svg');
+        return('https://img.shields.io/badge/License-ISC-blue.svg');
       } else return ("");
     };
 
@@ -21,13 +21,13 @@ function renderLicenseBadge(choices) {
 // If there is no license, return an empty string
 function renderLicenseLink(choices) {
     if (choices == "Apache") {
-        renderLicenseLink('https://opensource.org/licenses/Apache-2.0');
+        return('https://opensource.org/licenses/Apache-2.0');
       } else if (choices == "GNU") {
-        renderLicenseLink('https://www.gnu.org/licenses/gpl-3.0');
+        return('https://www.gnu.org/licenses/gpl-3.0');
       } else if (choices == "MIT") {
-        renderLicenseLink('https://opensource.org/licenses/MIT');
+        return('https://opensource.org/licenses/MIT');
       } else if (choices == "ISC") {
-        renderLicenseLink('https://opensource.org/licenses/ISC');
+        return('https://opensource.org/licenses/ISC');
       } else return ("");
     };
 
@@ -36,13 +36,13 @@ function renderLicenseLink(choices) {
 // If there is no license, return an empty string
 function renderLicenseSection(choices) {
     if (choices == "Apache") {
-        renderLicenseSection('Apache');
+        return('Apache');
       } else if (choices == "GNU") {
-        renderLicenseSection('GNU');
+        return('GNU');
       } else if (choices == "MIT") {
-        renderLicenseSection('MIT');
+        return('MIT');
       } else if (choices == "ISC") {
-        renderLicenseSection('ISC');
+        return('ISC');
       } else return ("");
 };
 
@@ -129,9 +129,9 @@ function generateMarkdown() {
 
  ## LICENSE
  ${inquirerResponses.license}
- ${inquirerResponses.renderLicenseBadge}
- ${inquirerResponses.renderLicenseLink}
- ${inquirerResponses.renderLicenseSection}
+ ${renderLicenseBadge(inquirerResponses.license)}
+ ${renderLicenseLink(inquirerResponses.license)}
+ ${renderLicenseSection(inquirerResponses.license)}
 
  ## CONTRIBUTE
  ${inquirerResponses.contribute}
