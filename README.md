@@ -6,10 +6,9 @@
  Quickly creates a professional README.
 
  ## TABLE OF CONTENTS
- Installation
 
  ## INSTALLATION
- using the command line type node index.js
+ Using the command line, type node index.js
 
  ## USAGE
  use it to quickly make a README file
@@ -20,14 +19,15 @@
  https://opensource.org/licenses/Apache-2.0
  Apache
 
- ## CONTRIBUTE
- not sure
+ ## VIDEO
+https://user-images.githubusercontent.com/71401585/109407580-f1245700-794f-11eb-9952-645ca36415fc.mov
+
 
  ## TESTS
- several
+ 
 
  ## GITHUB
- CRenauro
+ https://github.com/CRenauro
 
  ## EMAIL
  crenauro@optimum.net
