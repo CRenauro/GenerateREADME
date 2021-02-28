@@ -4,7 +4,6 @@ const path = require('path');
 const fs = require('fs');
 // const gernerateMarkdown = require('./util/generateMarkdown');
 
-
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -104,7 +103,7 @@ const questions = [
         },
     ];   
 
-//Function to write the readme
+// Function to write the readme
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 };
