@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
+// const gernerateMarkdown = require('./util/generateMarkdown');
 
 
 // Create a function that returns a license badge based on which license is passed in
@@ -113,13 +114,11 @@ function writeToFile(fileName, data) {
 function generateMarkdown() {
     inquirer.prompt(questions).then((inquirerResponses) => {
       console.log("generating your readME");
-    renderLicenseBadge(response, license);
-    renderLicenseLink(response, license);
-    renderLicenseSection(response, license);
-    writeToFile('README.md', gernerateMarkdown({...inquirerResponses}));
+    writeToFile('README.md', gernerateMarkdown({...inquirerResponses}))
   }) .catch(function (err){
   console.log(err);
 
 });
+}
 
 generateMarkdown();
